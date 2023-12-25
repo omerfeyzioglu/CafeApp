@@ -1,0 +1,95 @@
+﻿@model WebApplication8.Models.AddCafeViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f8f9fa;
+        
+    }
+
+    h3 {
+        color: #007bff;
+    }
+
+    form {
+        max-width: 400px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .mb-3 {
+        margin-bottom: 15px;
+    }
+
+    input, select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ced4da;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    button {
+        background-color: #007bff;
+        color: #ffffff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+    
+    .welcome-message {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+</style>
+
+<div class="welcome-message">
+    <h3>@ViewData["WelcomeMessage"]</h3>
+</div>
+
+<form method="post" asp-action="Add">
+   
+
+    <div class="mb-3">
+        <input placeholder="Name" type="text" class="form-control" asp-for="Name">
+    </div>
+    <div class="mb-3">
+        <input placeholder="Description" type="text" class="form-control" asp-for="Description">
+    </div>
+    <div class="mb-3">
+        <select name="City" id="citySelect" class="form-control" asp-for="City">
+            <option value="" selected disabled>Select a city</option>
+            <option value="İstanbul">İstanbul</option>
+            <option value="Ankara">Ankara</option>
+            <option value="İzmir">İzmir</option>
+            <option value="Kocaeli">Kocaeli</option>
+            <option value="Sakarya">Sakarya</option>
+            <option value="Bursa">Bursa</option>
+            <option value="Ardahan">Ardahan</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <input placeholder="Email" type="email" class="form-control" asp-for="Email">
+    </div>
+    <div class="mb-3">
+        <input placeholder="Detailed Address" type="text" class="form-control" asp-for="detailedAdress">
+    </div>
+    <div class="mb-3">
+        <input placeholder="Paste Url" type="text" class="form-control" asp-for="imageUrl">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

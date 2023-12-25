@@ -1,0 +1,37 @@
+﻿@model List<WebApplication8.Models.Domain.Cafe>
+@{
+}
+
+<h1>Cafe</h1>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>Name</th>
+			<th>Description</th>
+			<th>City</th>
+			<th>Email</th>
+			<th>Detailed Address</th>
+			<th>Image Url</th>
+			<th> </th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var cafe in Model)
+		{
+			<tr>
+				<td>@cafe.Id</td>
+				<td>@cafe.Name</td>
+				<td>@cafe.Description</td>
+				<td>@cafe.City</td>
+				<td>@cafe.Email</td>
+				<td>@cafe.detailedAdress</td>
+				<td><a href="@cafe.imageUrl" target="_blank">@cafe.Name</a></td>
+
+				<td><a href="Cafe/View/ @cafe.Id">View</a></td>
+			</tr>
+		}
+	</tbody>
+
+</table>

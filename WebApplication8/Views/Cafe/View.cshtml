@@ -1,0 +1,50 @@
+﻿@model WebApplication8.Models.UpdateCafeViewModel
+@{
+}
+
+<h1>@ViewBag.WelcomeMessage</h1>
+<form method="post" asp-action="View">
+    <div class="mb-3">
+        <label for="" class="form-label">Id</label>
+        <input type="text" class="form-control" asp-for="Id" readonly>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Name</label>
+        <input type="text" class="form-control" asp-for="Name">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Description</label>
+        <input type="text" class="form-control" asp-for="Description">
+    </div>
+    <div class="mb-3">
+        <label for="">Choose City</label>
+        <select name="City" id="citySelect" class="form-control" asp-for="City">
+            <option value="" selected disabled>Select a city</option>
+            <option value="İstanbul">İstanbul</option>
+            <option value="Ankara">Ankara</option>
+            <option value="İzmir">İzmir</option>
+            <option value="Kocaeli">Kocaeli</option>
+            <option value="Sakarya">Sakarya</option>
+            <option value="Bursa">Bursa</option>
+            <option value="Ardahan">Ardahan</option>
+        </select>
+    </div>
+    <script>
+        function resetSelect() {
+            document.getElementById("citySelect").selectedIndex = 0;
+        }
+    </script>
+    <div class="mb-3">
+        <label for="" class="form-label">Email</label>
+        <input type="email" class="form-control" asp-for="Email">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Detailed Address</label>
+        <input type="text" class="form-control" asp-for="detailedAdress">
+    </div><div class="mb-3">
+        <label for="" class="form-label">Image Url</label>
+        <input type="text" class="form-control" asp-for="imageUrl">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-danger" asp-action="Delete" asp-controller="Cafe">Delete</button>
+</form>
