@@ -3,6 +3,24 @@
 ###############################################################################
 * text=auto
 
+# *.cs dosyaları için C# diff ayarı
+*.cs diff=csharp
+
+# Proje ve çözüm dosyalarının birleştirme sürücüsü ayarı
+*.sln merge=binary
+*.csproj merge=binary
+
+# Görsel dosyaların ikili olarak ele alınması
+*.jpg binary
+*.png binary
+*.gif binary
+
+# Belge dosyalarının farklılaştırma davranışı ayarı
+*.doc diff=astextplain
+*.docx diff=astextplain
+*.pdf diff=astextplain
+
+
 ###############################################################################
 # Set default behavior for command prompt diff.
 #
